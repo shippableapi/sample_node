@@ -39,7 +39,7 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "www_notif"
+    - integrationName: www_notif
       type: slack
       recipients:
         - www-notifications
@@ -53,7 +53,7 @@ integrations:
     
 
   hub:
-    - integrationName: "manishasDockerHub"
+    - integrationName: manishasDockerHub
       type: docker
       branches:
         only:
