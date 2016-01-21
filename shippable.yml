@@ -27,7 +27,8 @@ build:
     - ls -al
 
   post_ci:
-    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node
+    - docker tag sample-node:latest 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
+    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
 
   smoke_test:
     - sudo ls /
