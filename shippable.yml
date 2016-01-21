@@ -27,6 +27,7 @@ build:
     - ls -al
 
   post_ci:
+    - aws ecr get-login --region us-east-1
     - docker tag manishas/sample-node:latest 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
     - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
 
