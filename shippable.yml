@@ -23,6 +23,7 @@ build:
 
   ci:
     - ps -eax
+    - printenv
     - ls -al
 
   post_ci:
