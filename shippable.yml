@@ -41,7 +41,7 @@ deploy:
 integrations:
   hub:
     - integrationName: manishasECR
-      type: "Amazon ECR"
+      type: docker
       branches:
         only:
           - master
