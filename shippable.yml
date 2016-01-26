@@ -14,6 +14,7 @@ env:
 build:
   pre_ci:
     - docker build --rm -t=manishas/sample-node .
+    - docker build --rm -t=manishas/sample-python -f ./testRepoDockerbuild
 
   pre_ci_boot:
     image_name: manishas/sample-node
@@ -30,9 +31,11 @@ build:
   post_ci:
     - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
     - docker tag -f manishas/sample-node:latest manishas/sample-node:test
+    - docker tag -f manishas/sample-python:latest manishas/sample-python:test
 #    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
     - docker push manishas/sample-node:tip
     - docker push manishas/sample-node:test
+    - docker push manishas/sample-python:test
 
   smoke_test:
     - sudo ls /
