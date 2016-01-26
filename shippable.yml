@@ -14,8 +14,10 @@ env:
 build:
   pre_ci:
     - docker build --rm -t=manishas/sample-node .
-    - docker build --rm -t=manishas/sample-python -f ./testRepoDockerbuild
-
+    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
+    - cd ..
+    - ls -al
+    
   pre_ci_boot:
     image_name: manishas/sample-node
     image_tag: latest
