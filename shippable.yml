@@ -42,8 +42,8 @@ deploy:
 
 integrations:
   hub:
-    - integrationName: manishasECR
-      type: aws
+    - integrationName: manishasDockerHub
+      type: docker
       branches:
         only:
           - master
