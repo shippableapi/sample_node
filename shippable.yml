@@ -29,8 +29,10 @@ build:
 
   post_ci:
     - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
+    - docker tag -f manishas/sample-node:latest manishas/sample-node:test
 #    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
     - docker push manishas/sample-node:tip
+    - docker push manishas/sample-node:test
 
   smoke_test:
     - sudo ls /
