@@ -30,6 +30,7 @@ build:
     - printenv
     - ls -al
     - docker run -i ubuntu bash
+    - docker ps
 
   post_ci:
 #    - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
