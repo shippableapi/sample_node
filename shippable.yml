@@ -23,8 +23,8 @@ build:
     image_tag: latest
     pull: false
     env: FOO=BAR
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
+#    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+    options: '-e FOO=true -e BOO=false'
   ci:
     - ps -eax
     - printenv
