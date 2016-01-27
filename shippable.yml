@@ -29,7 +29,7 @@ build:
     - ps -eax
     - printenv
     - ls -al
-    - docker run --rm -i ubuntu ip link add dummy0 type dummy
+    - docker run -t -i ubuntu bash
 
   post_ci:
 #    - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
