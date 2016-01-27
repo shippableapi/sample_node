@@ -29,8 +29,10 @@ build:
     - ps -eax
     - printenv
     - ls -al
+    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
+    - cd ..
     - docker run -i ubuntu bash
-    - docker ps
+    - docker ps -a
 
   post_ci:
 #    - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
