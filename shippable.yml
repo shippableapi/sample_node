@@ -12,34 +12,34 @@ env:
     - BOO=GUBU
 
 build:
-#  pre_ci:
-#    - docker build --rm -t=manishas/sample-node .
+  pre_ci:
+    - docker build --rm -t=manishas/sample-node .
 #    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
 #    - cd ..
 #    - ls -al
     
-#  pre_ci_boot:
-#    image_name: manishas/sample-node
-#    image_tag: latest
-#    pull: false
-#    env: FOO=BAR
-#    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-#    options: '-e FOO=true -e BOO=false'
+  pre_ci_boot:
+    image_name: manishas/sample-node
+    image_tag: latest
+    pull: false
+    env: FOO=BAR
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+
   ci:
     - ps -eax
     - printenv
     - ls -al
-    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
-    - cd ..
-    - docker run -i ubuntu bash
-    - docker ps -a
+#    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
+#    - cd ..
+#    - docker run -i ubuntu bash
+#    - docker ps -a
 
   post_ci:
-#    - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
+     - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
 #    - docker tag -f manishas/sample-node:latest manishas/sample-node:test
 #    - docker tag -f manishas/sample-python:latest manishas/sample-python:test
 #    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
-#    - docker push manishas/sample-node:tip
+     - docker push manishas/sample-node:tip
 #    - docker push manishas/sample-node:test
 #    - docker push manishas/sample-python:test
 
