@@ -35,13 +35,14 @@ build:
 #    - docker ps -a
 
   post_ci:
+     - echo $BUILD_NUMBER
 #     - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
-     - docker tag -f manishas/sample-node:latest manishas/sample-node:$BUILD_NUM
+     - docker tag -f manishas/sample-node:latest manishas/sample-node:$BUILD_NUMBER
 #    - docker tag -f manishas/sample-node:latest manishas/sample-node:test
 #    - docker tag -f manishas/sample-python:latest manishas/sample-python:test
 #    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
 #     - docker push manishas/sample-node:tip
-     - docker push manishas/sample-node:$BUILD_NUM
+     - docker push manishas/sample-node:$BUILD_NUMBER
 #    - docker push manishas/sample-node:test
 #    - docker push manishas/sample-python:test
 
