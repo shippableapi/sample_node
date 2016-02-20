@@ -29,6 +29,7 @@ build:
     - ps -eax
     - printenv
     - ls -al
+    - ssh-add -l
 #    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
 #    - cd ..
 #    - docker run -i ubuntu bash
