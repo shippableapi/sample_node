@@ -12,54 +12,10 @@ env:
     - BOO=GUBU
 
 build:
-  pre_ci:
-    - docker build --rm -t=manishas/sample-node .
-#    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
-#    - cd ..
-#    - ls -al
-    
-  pre_ci_boot:
-    image_name: manishas/sample-node
-    image_tag: latest
-    pull: false
-    env: FOO=BAR
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
   ci:
     - ps -eax
     - printenv
     - ls -al
     - ssh-add -l
-#    - cd testRepoDockerbuild && docker build -t manishas/sample-python .
-#    - cd ..
-#    - docker run -i ubuntu bash
-#    - docker ps -a
 
-  post_ci:
-     - echo $BUILD_NUMBER
-#     - docker tag -f manishas/sample-node:latest manishas/sample-node:tip
-     - docker tag -f manishas/sample-node:latest manishas/sample-node:$BUILD_NUMBER
-#    - docker tag -f manishas/sample-node:latest manishas/sample-node:test
-#    - docker tag -f manishas/sample-python:latest manishas/sample-python:test
-#    - docker push 027746667844.dkr.ecr.us-east-1.amazonaws.com/sample-node:latest
-#     - docker push manishas/sample-node:tip
-     - docker push manishas/sample-node:$BUILD_NUMBER
-#    - docker push manishas/sample-node:test
-#    - docker push manishas/sample-python:test
-
-  smoke_test:
-    - sudo ls /
-
-deploy:
-  pre_build:
-    - ls
-    - ls -al
-
-integrations:
-  hub:
-    - integrationName: manishasDockerHub
-      type: docker
-      branches:
-        only:
-          - master
  
