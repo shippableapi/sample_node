@@ -1,4 +1,4 @@
-Node.js Sample!
+Node.js Sample hello
 =================
 
 A simple Node.js application with tests.
